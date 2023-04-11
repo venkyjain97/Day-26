@@ -1,0 +1,33 @@
+Example of a JavaScript function that takes an array of objects representing books and returns a new array of objects that contain only the book title and author name, using array destructuring and arrow functions:
+
+
+function extractTitleAndAuthor(books, ...args) {
+  const newBooks = books.map(({title, author}) => ({title, author}));
+  console.log(...newBooks, ...args);
+  return newBooks;
+}
+
+In this function, we declare a function called "extractTitleAndAuthor" that takes an array of objects called "books" as its first argument, and uses the spread operator to capture any additional arguments passed to the function.
+
+We then use array destructuring to extract the book title and author name from each object in the "books" array. We use arrow functions and the map method of the "books" array to create a new array of objects that only contain the book title and author name.
+
+Finally, we use the spread operator to pass the new array of objects as individual arguments to a console.log statement.
+
+The main difference between normal functions and arrow functions is in their syntax and behavior. Arrow functions have a shorter, more concise syntax than normal functions, and they have a lexical this, which means that they inherit the context in which they are defined, rather than creating their own context.
+
+In general, you might choose to use an arrow function when you need a shorter, more concise syntax and when you don't need to access the this keyword inside the function. Normal functions are more flexible, as they allow you to access the this keyword and use the arguments object, and they can also be used as constructors with the new keyword. However, they have a longer syntax and can sometimes be harder to read and understand.
+
+For example, if we wanted to define a function that squares a number, we could use a normal function like this:
+
+
+function square(x) {
+  return x * x;
+}
+
+Or we could use an arrow function like this:
+
+javascript
+
+const square = (x) => x * x;
+
+Both functions do the same thing, but the arrow function has a shorter syntax. However, if we needed to use the this keyword inside the function, we would need to use a normal function instead.
